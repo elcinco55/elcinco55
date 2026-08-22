@@ -176,7 +176,7 @@ Go is my main language, but I use whatever gets the job done.
 </div>
 ```
 
-```aura width=200 height=44 link="https://www.linkedin.com/in/vitor-tavares-398481331/" inline align=center
+```aura width=200 height=44 link="https://www.linkedin.com/in/vitor-leite-398481331/" inline align=center
 <div style={{
   width:'100%', height:'100%', display:'flex', alignItems:'center', justifyContent:'center',
   fontFamily:'Inter', background:'#0a0a08', borderRadius:22,
