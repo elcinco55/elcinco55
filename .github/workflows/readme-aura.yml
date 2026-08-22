@@ -1,23 +1,55 @@
-name: Generate README
+name: Check README
+
+# O README.md e os SVGs sao gerados a partir de readme.source.md e commitados
+# junto. Este workflow so confere se o que esta commitado bate com o que a
+# fonte gera. Ele NAO escreve no repositorio: nada de commit automatico.
 
 on:
   push:
     branches: [main]
-    paths: ['readme.source.md']
-  schedule:
-    - cron: '0 6 * * *'
+    paths:
+      - 'readme.source.md'
+      - '.github/img/**'
+      - '.github/workflows/readme-aura.yml'
+  pull_request:
+    paths:
+      - 'readme.source.md'
+      - '.github/img/**'
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
-  generate:
+  check:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
-      - name: Generate README
-        uses: collectioneur/readme-aura@main
+      - name: Setup Node
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          node-version: '20'
+
+      - name: Rebuild README from source
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          npx --yes readme-aura@1.0.19 build \
+            --source readme.source.md \
+            --output README.md \
+            --assets .github/assets \
+            --github-user elcinco55
+
+      - name: Fail if the committed output is stale
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            echo "::error::README.md e/ou .github/assets estao desatualizados em relacao a readme.source.md."
+            echo "Rode localmente:  npx readme-aura build -g elcinco55  e commite o resultado."
+            echo ""
+            echo "Arquivos fora de sincronia:"
+            git status --porcelain
+            exit 1
+          fi
+          echo "README esta em dia com readme.source.md."
