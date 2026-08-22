@@ -137,7 +137,8 @@
 ```
 
 <p align="center">
-Go is my main language, but I use whatever gets the job done.
+Go is my main language, but I use whatever gets the job done.<br />
+Most of what I know came from breaking something first.
 </p>
 
 ```aura width=860 height=238
