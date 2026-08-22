@@ -1,3 +1,9 @@
+<!--
+  ATENCAO: este README e GERADO. Nao edite este arquivo.
+  Edite readme.source.md e rode: npx readme-aura build -g elcinco55
+  Qualquer alteracao feita aqui e perdida no proximo build.
+-->
+
 ```aura width=860 height=200 link="https://github.com/elcinco55"
 <div style={{
   width: '100%', height: '100%', background: '#0a0a08',
