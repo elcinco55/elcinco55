@@ -107,7 +107,10 @@
 </div>
 ```
 
-Construo coisas de ponta a ponta — Go é minha linguagem principal, mas uso o que resolver o problema. Sempre quebrando algo pra entender como funciona.
+<p align="center">
+I build things end to end — Go is my main language, but I use whatever gets the job done.<br />
+Always breaking something to understand how it works.
+</p>
 
 ```aura width=860 height=238
 <div style={{
@@ -188,12 +191,4 @@ Construo coisas de ponta a ponta — Go é minha linguagem principal, mas uso o 
     <div style={{ display:'flex', fontSize:13, fontWeight:700, color:'#f0eeff' }}>cincao_</div>
   </div>
 </div>
-```
-
-<sub>Eu gosto muito de focas 🦭</sub>
-
-```aura width=860 height=22 link="https://collectioneur.github.io/readme-aura/"
-  <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', height: '100%', padding: 0, margin: 0 }}>
-    <span style={{ fontSize: 12, lineHeight: 1, color: 'rgba(150,140,200,0.55)', fontWeight: 500, letterSpacing: '0.4px' }}>powered by readme-aura</span>
-  </div>
 ```
