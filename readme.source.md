@@ -119,7 +119,7 @@
       Vitor Tavares
     </div>
     <div style={{ display:'flex', fontSize:15, color:'rgba(233,229,175,0.85)', letterSpacing:'0.3px' }}>
-      Full-stack dev @ Powerbizz.ai — cybersecurity @ PUC Campinas
+      Information Security Analyst @ Powerbizz.ai — cybersecurity @ PUC Campinas
     </div>
     <div style={{ display:'flex', gap:8, marginTop:6, flexWrap:'wrap' }}>
       {['Go', 'Pentesting', 'Open source', 'BlackArch'].map(function(tag, i) {
